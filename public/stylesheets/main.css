@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: whitesmoke;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+.callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-color: red;
+  border-left-width: 5px;
+  border-radius: 3px;
+}
+.callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: red;
+}
+.callout + .bs-callout {
+  margin-top: -5px;
+}
+
+.login-conatiner {
+  margin: 20vh auto;
+  width: 50vw;
+  background: white;
+  padding: 20px;
+}
+.login-conatiner h1 {
+  color: blue;
+  text-align: center;
+  text-transform: uppercase;
+}
+.login-conatiner input {
+  height: 35px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 10px;
+  width: 100%;
+}
+.login-conatiner label {
+  padding: 0 15px;
+}
+.login-conatiner .error {
+  color: red;
+}
+.login-conatiner .btn-holder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.login-conatiner .btn-holder button {
+  margin: 0 auto;
+  background: blue;
+  color: white;
+  height: 35px;
+  border: none;
+  padding: 0 30px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.nav-container {
+  background-color: blue;
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+}
+.nav-container .nav-button-holder {
+  text-align: center;
+}
+.nav-container .nav-button-holder span {
+  color: white;
+}
+.nav-container .nav-button-holder a {
+  color: white;
+  padding: 0 10px;
+}
+
+/*# sourceMappingURL=main.css.map */

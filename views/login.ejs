@@ -1,0 +1,20 @@
+<%- include('./blocks/head')%>
+
+<div class="login-conatiner">
+    <form target="_self" id="formLogin" method="post" action="/dangnhap">
+        <h1>Đăng nhập</h1>
+        <% if (message.length > 0) { %>
+            <div class="callout">
+                <h4><%- message[0]%></h4>
+            </div>
+        <% } %>
+        <input name="username" type="email" placeholder="Nhập địa chỉ email" >
+        <input name="password" type="password" placeholder="Nhập mật khẩu" >
+        <div class="btn-holder">
+            <button type="submit" id="btnLogin">Đăng Nhập</button>
+        </div>
+    </form>
+</div>
+
+<%- include('./blocks/foot')%>
+
