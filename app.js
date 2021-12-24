@@ -44,7 +44,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-require('./routes/main')(app,passport);
+require('./routes/main')(app, passport);
 
 app.listen(3000, function () {
     console.log('Server is running !');
