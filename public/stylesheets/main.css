@@ -86,21 +86,18 @@ textarea {
   border-radius: 5px;
 }
 
-.nav-container {
-  background-color: blue;
-  width: 100%;
-  margin: auto;
-  padding: 10px;
-}
-.nav-container .nav-button-holder {
-  text-align: center;
-}
-.nav-container .nav-button-holder span {
+.navbar .navbar-brand {
   color: white;
 }
-.nav-container .nav-button-holder a {
+.navbar .nav-item .nav-link {
   color: white;
-  padding: 0 10px;
+}
+.navbar .nav-account-holder span {
+  color: white;
+}
+.navbar .nav-account-holder a {
+  color: white;
+  padding: 0 20px;
 }
 
 /*# sourceMappingURL=main.css.map */

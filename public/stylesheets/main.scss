@@ -51,6 +51,7 @@ textarea {
   width: 50vw;
   background: white;
   padding: 20px;
+
   h1 {
     color: blue;
     text-align: center;
@@ -93,21 +94,24 @@ textarea {
   }
 }
 
-.nav-container {
-  background-color: blue;
-  width: 100%;
-  margin: auto;
-  padding: 10px;
-    
-  .nav-button-holder {
-      text-align: center;
-      span{
-          color: white;
-      }
-    a {
+.navbar {
+  .navbar-brand {
+    color: white;
+  }
+
+  .nav-item {
+    .nav-link {
       color: white;
-      padding: 0 10px;
     }
   }
 
+  .nav-account-holder {
+    span{
+      color: white;
+    }
+    a {
+      color: white;
+      padding: 0 20px;
+    }
+  }
 }

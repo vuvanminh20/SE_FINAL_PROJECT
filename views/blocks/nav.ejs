@@ -1,14 +1,48 @@
-<div class="nav-container">
-    <div class="d-flex justify-content-around">
-        <div class="nav-button-holder">
-            <a href="/">Trang chủ</a>
-            <a href="/dathang">Đặt hàng</a>
-            <a href="/xuatnhap">Xuất/ Nhập</a>
-            <a href="/thongke">Thống kê</a>
+<nav class="navbar navbar-expand-lg navbar bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="#">Trang chủ</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown"
+                aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Xuất/nhập
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+                        <li><a class="dropdown-item" href="/nhaphang">Nhập hàng</a></li>
+                        <li><a class="dropdown-item" href="/quanlydonhang">Quản lý đơn hàng</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Đơn hàng
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                        <li><a class="dropdown-item" href="/donhang">Tạo đơn hàng</a></li>
+                        <li><a class="dropdown-item" href="/theodoidonhang">Theo dõi đơn hàng</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink3" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Thống kê
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+                        <li><a class="dropdown-item" href="/thongkehanghoa">Thống kê hàng hoá</a></li>
+                        <li><a class="dropdown-item" href="/thongkedanhthu">Thống kê danh thu</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-        <div class="nav-button-holder">
-            <span>Xin chào, <%- user.Name %> </span>
+
+        <div class="nav-account-holder d-flex">
+            <span>Xin chào, <%- user.Name %></span>
             <a href="/dangxuat">Đăng xuất</a>
         </div>
     </div>
-</div>
+</nav>

@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const orderSchema = new mongoose.Schema({
+    User:{
+        type: mongoose.ObjectId,
+        ref: 'User'
+    },
     Date: String,
     Address: String,
     Phone: String,
@@ -11,10 +15,7 @@ const orderSchema = new mongoose.Schema({
         },
         importQty: Number
     }],
-    User:{
-        type: mongoose.ObjectId,
-        ref: 'User'
-    },
+
     totalPayment: Number,
     paymentType: String,
     paymentStatus: Number,
@@ -22,7 +23,7 @@ const orderSchema = new mongoose.Schema({
     Edit:{
         type: mongoose.ObjectId,
         ref: 'User'
-    },
+    }
 });
 
 module.exports = mongoose.model('Order',orderSchema);

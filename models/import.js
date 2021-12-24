@@ -13,7 +13,7 @@ const importSchema = new mongoose.Schema({
     User:{
         type: mongoose.ObjectId,
         ref: 'User'
-    },
+    }
 });
 
 module.exports = mongoose.model('Import',importSchema);
