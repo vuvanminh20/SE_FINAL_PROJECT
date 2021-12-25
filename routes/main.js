@@ -7,9 +7,9 @@ const multer = require('multer');
 
 module.exports = function (app, passport) {
     app.get('/dangnhap', (req, res) => {
-        if(req.isAuthenticated()){
+        if (req.isAuthenticated()) {
             res.redirect('/')
-        }else{
+        } else {
             res.render('login', {title: 'Đăng nhập', message: req.flash('flashMsg')});
         }
     });
@@ -26,7 +26,7 @@ module.exports = function (app, passport) {
         res.redirect('/dangnhap');
     });
 
-    app.get('/', (req, res) => {
+    app.get('/', isLogin, (req, res) => {
         res.render('index', {
             page: 'index',
             title: 'Trang chủ',
@@ -35,13 +35,37 @@ module.exports = function (app, passport) {
 
     });
 
-    app.get('/nhaphang', async (req, res) => {
+    app.get('/nhaphang', isLogin, async (req, res) => {
         if (req.user.userRole === 'ketoan') {
-            res.render('index', {
-                page: 'import',
-                title: 'Tạo phiếu nhập kho',
-                user: req.user,
+            try{
+                let product = await Product.find()
+                res.render('index', {
+                    page: 'import',
+                    title: 'Tạo phiếu nhập kho',
+                    user: req.user,
+                    product: product
+                });
+            }catch (e) {
+                console.log(e);
+                res.redirect('/')
+            }
+
+        } else {
+            res.redirect('/');
+        }
+    });
+
+    app.post('/nhaphang', isLogin, async (req, res) => {
+        let productList = req.body.productList;
+        if (req.user.userRole === 'ketoan') {
+            let newImport = new Import({
+                Date: Date.now(),
+                importList:productList,
+                User:req.user._id
             });
+
+            let saveImport = await newImport.save();
+            res.json({code:200})
         } else {
             res.redirect('/');
         }

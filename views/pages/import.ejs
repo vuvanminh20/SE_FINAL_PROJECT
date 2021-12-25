@@ -1,3 +1,31 @@
-<div class="import-container">
-
+<div class="import-container container">
+    <h2>PHIẾU NHẬP KHO</h2>
+    <div class="import-form-container">
+        <div class="row import-row-0">
+            <div class="col-1 index">
+                <span>1</span>
+            </div>
+            <div class="col-5 product-list">
+                <select id="selectProduct0">
+                    <option selected disabled>Vui lòng chọn sản phẩm cần nhập</option>
+                    <% product.forEach(function (p) {%>
+                        <option value="<%- p._id%>"><%- p.Name%></option>
+                    <%})%>
+                </select>
+            </div>
+            <div class="col-3">
+                <input id="txtQty0" required type="number" placeholder="Nhập số lượng sản phẩm">
+            </div>
+            <div class="col-3">
+                <input id="txtPrice0" required type="number" placeholder="Nhập đơn giá nhập">
+            </div>
+        </div>
+    </div>
+    <div class="import-btn-holder">
+        <button id="btnAddRow">Thêm dòng</button>
+        <button id="btnDelRow">Xoá dòng</button>
+        <button id="btnImport">Tạo phiếu nhập</button>
+    </div>
 </div>
+<script>let product = <%- JSON.stringify(product)%>;</script>
+<script src="../javascripts/import.js"></script>
