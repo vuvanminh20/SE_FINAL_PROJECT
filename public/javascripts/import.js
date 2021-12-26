@@ -26,7 +26,7 @@ $(document).ready(() => {
                 value: p._id,
                 text: p.Name
             }));
-        })
+        });
     });
 
     $('#btnDelRow').click(() => {
@@ -43,7 +43,7 @@ $(document).ready(() => {
             if (product && qty > 0 && price >= 10000){
                 productList.push({Product: product, importQty: qty, importPrice: price});
             }else{
-                alert('Vui lòng kiểm tra lại thông tin ở dòng 1 !\nBạn hãy đảm bảo sản hẩm đã được chọn, số lượng lớn hơn 0 và giá nhập lớn hơn 10.000 vnd')
+                alert('Vui lòng kiểm tra lại thông tin ở dòng 1 !\nBạn hãy đảm bảo sản hẩm đã được chọn, số lượng lớn hơn 0 và giá nhập lớn hơn 10.000 vnd');
             }
         } else {
             for (let i = 0; i <= row; i++) {
@@ -53,7 +53,7 @@ $(document).ready(() => {
                 if (product && qty > 0 && price >= 10000){
                     productList.push({Product: product, importQty: qty, importPrice: price});
                 }else{
-                    alert('Vui lòng kiểm tra lại thông tin ở dòng '+(i+1)+' !\nBạn hãy đảm bảo sản hẩm đã được chọn, số lượng lớn hơn 0 và giá nhập lớn hơn 10.000 vnd')
+                    alert('Vui lòng kiểm tra lại thông tin ở dòng '+(i+1)+' !\nBạn hãy đảm bảo sản hẩm đã được chọn, số lượng lớn hơn 0 và giá nhập lớn hơn 10.000 vnd');
                 }
             }
         }
@@ -68,6 +68,6 @@ $(document).ready(() => {
                     alert('Đã xảy ra lỗi ! Vui lòng thử lại');
                     window.location = '/nhaphang';
                 }
-            })
+            });
     });
 });

@@ -1,0 +1,57 @@
+<div class="order-container container">
+    <h2>TẠO ĐƠN HÀNG</h2>
+    <div class="order-form-container">
+        <div class="row">
+            <div class="col-6">
+                <input type="text" id="txtAdress" required placeholder="Vui lòng nhập đỉa chỉ giao hàng">
+            </div>
+            <div class="col-6">
+                <input type="text" id="txtPhone" required placeholder="Vui lòng nhập số điện thoại">
+            </div>
+        </div>
+
+        <div class="row order-row">
+            <div class="col-1 index">
+                <span></span>
+            </div>
+            <div class="col-5 product-list">
+                <span>Tên sản phẩm</span>
+            </div>
+            <div class="col-3">
+                <span>Số lượng sản phẩm</span>
+            </div>
+            <div class="col-3">
+                <span>Đơn giá sản phẩm</span>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <div class="btn-payment">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="inlineCheckboxCOD" value="cod" autocomplete="off" checked>
+                    <label class="btn btn-outline-success" for="inlineCheckboxCOD">Thanh toán COD</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="inlineCheckboxBank" value="bank" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="inlineCheckboxBank">Chuyển khoản NH</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="inlineCheckboxMomo" value="momo" autocomplete="off">
+                    <label class="btn btn-outline-danger" for="inlineCheckboxMomo">Ví điện tử Momo</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <span>Tổng tiền: <b id="txtTotalPrice">0 vnđ</b></span>
+        </div>
+    </div>
+    <div class="order-btn-holder">
+        <button id="btnUpdate">Cập nhật</button>
+        <button id="btnOrder">Đặt hàng</button>
+    </div>
+</div>
+
+<script>
+    let product = <%- JSON.stringify(product) %>;
+</script>
+<script src="../javascripts/order.js"></script>

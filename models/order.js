@@ -13,9 +13,8 @@ const orderSchema = new mongoose.Schema({
             type: mongoose.ObjectId,
             ref: 'Product'
         },
-        importQty: Number
+        Qty: Number
     }],
-
     totalPayment: Number,
     paymentType: String,
     paymentStatus: Number,

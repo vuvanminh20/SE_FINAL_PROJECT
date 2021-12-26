@@ -37,7 +37,7 @@ module.exports = function (app, passport) {
 
     app.get('/nhaphang', isLogin, async (req, res) => {
         if (req.user.userRole === 'ketoan') {
-            try{
+            try {
                 let product = await Product.find()
                 res.render('index', {
                     page: 'import',
@@ -45,7 +45,7 @@ module.exports = function (app, passport) {
                     user: req.user,
                     product: product
                 });
-            }catch (e) {
+            } catch (e) {
                 console.log(e);
                 res.redirect('/')
             }
@@ -60,12 +60,57 @@ module.exports = function (app, passport) {
         if (req.user.userRole === 'ketoan') {
             let newImport = new Import({
                 Date: Date.now(),
-                importList:productList,
-                User:req.user._id
+                importList: productList,
+                User: req.user._id
             });
-
             let saveImport = await newImport.save();
-            res.json({code:200})
+            res.json({code: 200});
+        } else {
+            res.redirect('/');
+        }
+    });
+
+    app.get('/donhang', isLogin, async (req, res) => {
+        if (req.user.userRole === 'daily') {
+            try {
+                let product = await Product.find()
+                res.render('index', {
+                    page: 'order',
+                    title: 'Tạo đơn hàng',
+                    user: req.user,
+                    product: product
+                });
+            } catch (e) {
+                console.log(e);
+                res.redirect('/')
+            }
+
+        } else {
+            res.redirect('/');
+        }
+    });
+
+    app.post('/donhang', isLogin, async (req, res) => {
+        let Address = req.body.Address;
+        let Phone = req.body.Phone;
+        let paymentType = req.body.paymentType;
+        let orderList = req.body.orderList;
+        let totalPayment = req.body.totalPayment;
+
+        if (req.user.userRole === 'daily') {
+            let newOrder = new Order({
+                User: req.user._id,
+                Date: Date.now(),
+                Address: Address,
+                Phone: Phone,
+                orderList: orderList,
+                totalPayment: totalPayment,
+                paymentType: paymentType,
+                paymentStatus: 0,
+                deliveryStatus: 0,
+            });
+            let saveOrder = await newOrder.save();
+            res.json({code: 200});
         } else {
             res.redirect('/');
         }

@@ -86,8 +86,14 @@ textarea {
   border-radius: 5px;
 }
 
+.navbar {
+  font-size: 18px;
+}
 .navbar .navbar-brand {
-  color: white;
+  margin-right: 30px;
+}
+.navbar .navbar-brand img {
+  height: 70px;
 }
 .navbar .nav-item .nav-link {
   color: white;
@@ -153,6 +159,75 @@ textarea {
   background: blue;
 }
 .import-container .import-btn-holder #btnDelRow {
+  background: red;
+}
+
+.order-container {
+  margin: 30px auto;
+  padding: 30px;
+  background: white;
+}
+.order-container h2 {
+  text-align: center;
+}
+.order-container .order-form-container {
+  margin: 30px 0;
+}
+.order-container .order-form-container .row {
+  padding: 20px;
+}
+.order-container .order-form-container .row .col-6 input {
+  height: 35px;
+  width: 100%;
+  padding: 0 10px;
+}
+.order-container .order-form-container .row .index {
+  text-align: center;
+  height: 35px;
+  font-size: 18px;
+}
+.order-container .order-form-container .row .index span {
+  vertical-align: middle;
+}
+.order-container .order-form-container .row .product-list select {
+  padding: 0 20px;
+  width: 100%;
+  height: 35px;
+}
+.order-container .order-form-container .row .col-3 {
+  text-align: center;
+}
+.order-container .order-form-container .row .col-3 input {
+  height: 35px;
+  width: 100%;
+  padding: 0 10px;
+}
+.order-container .btn-payment {
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.order-container .btn-payment .btn-group input {
+  margin: 0 10px;
+}
+.order-container .order-btn-holder {
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.order-container .order-btn-holder button {
+  margin: 0 15px;
+  height: 35px;
+  width: 150px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+}
+.order-container .order-btn-holder #btnOrder {
+  background: blue;
+}
+.order-container .order-btn-holder #btnUpdate {
   background: red;
 }
 
