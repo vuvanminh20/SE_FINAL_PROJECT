@@ -1,1 +1,89 @@
-<h1>test</h1>
+<% if(user.userRole === 'ketoan'){ %>
+    <div class="index-container container">
+        <div class="row">
+            <div class="col-4">
+                <div class="nav-button-holder" onclick="window.location = '/nhaphang'">
+                    <i class="fas fa-file-import"></i>
+                    <div><span>Nhập hàng</span></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="nav-button-holder" onclick="window.location = '/quanlydonhang'">
+                    <i class="fas fa-search"></i>
+                    <div><span>Quản lý đơn hàng</span></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="nav-button-holder" onclick="window.location = '/thongkehanghoa'">
+                    <i class="fas fa-box-open"></i>
+                    <div><span>Thống kê hàng hoá</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="nav-button-holder deny">
+                    <i class="far fa-shopping-cart"></i>
+                    <div><span>Đặt hàng (đại lý)</span></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="nav-button-holder deny">
+                    <i class="fas fa-search"></i>
+                    <div><span>Theo dõi đơn hàng (đại lý)</span></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="nav-button-holder" onclick="window.location = '/thongkedoanhthu'">
+                    <i class="fas fa-chart-line"></i>
+                    <div><span>Thống kê doanh thu</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%}%>
+
+<% if(user.userRole === 'daily'){ %>
+    <div class="index-container container">
+        <div class="row">
+            <div class="col-4">
+                <div class="nav-button-holder deny">
+                    <i class="fas fa-file-import"></i>
+                    <div><span>Nhập hàng</span></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="nav-button-holder deny">
+                    <i class="fas fa-search"></i>
+                    <div><span>Quản lý đơn hàng</span></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="nav-button-holder deny">
+                    <i class="fas fa-box-open"></i>
+                    <div><span>Thống kê hàng hoá</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="nav-button-holder" onclick="window.location = '/donhang'">
+                    <i class="far fa-shopping-cart"></i>
+                    <div><span>Đặt hàng (đại lý)</span></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="nav-button-holder" onclick="window.location = '/theodoidonhang'">
+                    <i class="fas fa-search"></i>
+                    <div><span>Theo dõi đơn hàng (đại lý)</span></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="nav-button-holder deny">
+                    <i class="fas fa-chart-line"></i>
+                    <div><span>Thống kê doanh thu</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%}%>

@@ -18,8 +18,7 @@ module.exports = function (app, passport) {
             successRedirect: '/',
             failureRedirect: '/dangnhap',
             failureFlash: true,
-        })
-    );
+        }));
 
     app.get('/dangxuat', (req, res) => {
         req.logout();
@@ -38,7 +37,7 @@ module.exports = function (app, passport) {
     app.get('/nhaphang', isLogin, async (req, res) => {
         if (req.user.userRole === 'ketoan') {
             try {
-                let product = await Product.find()
+                let product = await Product.find();
                 res.render('index', {
                     page: 'import',
                     title: 'Tạo phiếu nhập kho',
@@ -114,6 +113,71 @@ module.exports = function (app, passport) {
         } else {
             res.redirect('/');
         }
+    });
+
+    app.get('/quanlydonhang',isLogin,async (req,res)=>{
+        if (req.user.userRole === 'ketoan') {
+            try {
+                let order = await Order.find().populate('User').populate('orderList.Product');
+                res.render('index', {
+                    page: 'orderManage',
+                    title: 'Quản lý đơn hàng',
+                    user: req.user,
+                    order: order
+                });
+            } catch (e) {
+                console.log(e);
+                res.redirect('/')
+            }
+
+        } else {
+            res.redirect('/');
+        }
+    });
+
+    app.post('/capnhatdonhang',isLogin, (req,res)=>{
+        let id = req.body.id;
+        let action = req.body.action;
+        let status = req.body.status;
+        console.log(id)
+        if (req.user.userRole === 'ketoan') {
+            if (action === 'payment'){
+                let newStatus;
+                if (status == 0){
+                    newStatus = 1
+                }else{
+                    newStatus = 0
+                }
+                console.log(newStatus)
+                Order.findByIdAndUpdate(id,{paymentStatus:newStatus},(err,data)=>{
+                   if(err){
+                       console.log(err);
+                   } else{
+                       res.json({code: 200});
+                   }
+                });
+            }
+            if (action === 'delivery'){
+                let newStatus;
+                if (status == 0){
+                    newStatus = 1
+                }else{
+                    newStatus = 0
+                }
+                console.log(newStatus)
+                Order.findByIdAndUpdate(id,{deliveryStatus:newStatus},(err,data)=>{
+                    if(err){
+                        console.log(err);
+                    } else{
+                        res.json({code: 200});
+                    }
+                });
+            }
+
+        } else {
+            res.redirect('/');
+        }
+
     });
 };
 

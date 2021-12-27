@@ -106,6 +106,38 @@ textarea {
   padding: 0 20px;
 }
 
+.index-container {
+  margin: 30px auto;
+  padding: 30px;
+  background: white;
+}
+.index-container .row {
+  margin-bottom: 30px;
+}
+.index-container .row .nav-button-holder {
+  margin: 0 auto;
+  width: 70%;
+  background: dodgerblue;
+  text-align: center;
+  padding: 30px 0;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.index-container .row .nav-button-holder i {
+  font-size: 40px;
+}
+.index-container .row .nav-button-holder:hover {
+  background: blue;
+}
+.index-container .row .deny {
+  background: lightgray;
+  cursor: not-allowed;
+}
+.index-container .row .deny:hover {
+  background: lightgray;
+}
+
 .import-container {
   margin: 30px auto;
   padding: 30px;
@@ -229,6 +261,68 @@ textarea {
 }
 .order-container .order-btn-holder #btnUpdate {
   background: red;
+}
+
+.order-manage-container {
+  margin: 30px auto;
+  padding: 30px;
+  background: white;
+}
+.order-manage-container h2 {
+  text-align: center;
+}
+.order-manage-container .table-container {
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 50px;
+}
+.order-manage-container .table-container table thead tr th {
+  text-align: center;
+}
+.order-manage-container .table-container table tbody td {
+  text-align: center;
+}
+.order-manage-container .table-container table tbody td img {
+  height: 70px;
+  width: 70px;
+}
+.order-manage-container .table-container table tbody td button {
+  background: transparent;
+  border: none;
+}
+.order-manage-container .table-container table tbody td .btn-action {
+  cursor: pointer;
+}
+
+.print-table {
+  padding: 50px;
+}
+.print-table h2 {
+  text-align: center;
+}
+.print-table .print-date {
+  width: 100%;
+  text-align: right;
+  margin: 20px 0;
+}
+.print-table table {
+  width: 100%;
+  margin: 20px 0;
+  border: 1px solid black;
+}
+.print-table table tr {
+  border: 1px solid black;
+  text-align: center;
+}
+.print-table table tr th {
+  border: 1px solid black;
+}
+.print-table table tr td {
+  border: 1px solid black;
+}
+.print-table .print-foot {
+  margin-top: 20px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

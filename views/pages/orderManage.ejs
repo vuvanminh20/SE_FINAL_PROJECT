@@ -1,0 +1,78 @@
+<div class="order-manage-container container">
+    <h2>QUẢN LÝ ĐƠN HÀNG</h2>
+    <div class="table-container">
+
+        <div style=" width: 100%; padding: 1%">
+            <table id="tableOrderManage" class="display" >
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Người đặt</th>
+                    <th>Điện thoại</th>
+                    <th>Địa chỉ</th>
+                    <th>Ngày đặt</th>
+                    <th>Tổng tiền</th>
+                    <th>Thanh toán</th>
+                    <th>Trạng thái</th>
+                    <th>Xuất hàng</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<div class="print-container" style="display: none">
+    <div class="print-table container">
+        <h2><b>PHIẾU XUẤT KHO</b></h2>
+        <div class="print-date">Ngày xuất: 11/12/2000</div>
+        <div class="row">
+            <div class="col-6">
+                Người nhận: Nguyễn Văn A
+            </div>
+            <div class="col-6">
+                Số điện thoại: 0999999999
+            </div>
+            <div class="col-12">
+                Địa chỉ giao hàng: Trường đại học tôn đức thắng
+            </div>
+            <div class="col-6">Hình thức thanh toán: Chuyển khoản</div>
+            <div class="col-6">Trạng thái thanh toán: Chưa thanh toán</div>
+        </div>
+        <table>
+            <tr>
+                <th>TT</th>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Đơn giá</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Whey 1</td>
+                <td>12</td>
+                <td>1.400.000 vnđ</td>
+            </tr>
+        </table>
+        <div class="print-price">
+            Tổng tiền: 14.000.000 vnđ
+        </div>
+        <div class="row print-foot">
+            <div class="col-6">
+                <p>Người xuất</p>
+                <br>
+                <p>Dại lý 1</p>
+            </div>
+            <div class="col-6">
+                <p>Người xuất</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let order =<%-JSON.stringify(order)%>
+</script>
+<script src="../javascripts/orderManage.js"></script>
