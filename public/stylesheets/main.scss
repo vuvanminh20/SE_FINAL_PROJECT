@@ -406,3 +406,34 @@ textarea {
     text-align: center;
   }
 }
+
+.order-detail{
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid black;
+  top: 30%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 40px;
+  span{
+    cursor: pointer;
+    color: red;
+  }
+  table {
+    width: 100%;
+    margin: 20px 0;
+    border: 1px solid black;
+    tr{
+      border: 1px solid black;
+      text-align: center;
+      th{
+        border: 1px solid black;
+      }
+      td{
+        border: 1px solid black;
+      }
+    }
+  }
+}

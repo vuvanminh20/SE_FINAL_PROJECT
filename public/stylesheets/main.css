@@ -325,4 +325,35 @@ textarea {
   text-align: center;
 }
 
+.order-detail {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid black;
+  top: 30%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 40px;
+}
+.order-detail span {
+  cursor: pointer;
+  color: red;
+}
+.order-detail table {
+  width: 100%;
+  margin: 20px 0;
+  border: 1px solid black;
+}
+.order-detail table tr {
+  border: 1px solid black;
+  text-align: center;
+}
+.order-detail table tr th {
+  border: 1px solid black;
+}
+.order-detail table tr td {
+  border: 1px solid black;
+}
+
 /*# sourceMappingURL=main.css.map */

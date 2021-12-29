@@ -148,7 +148,6 @@ module.exports = function (app, passport) {
                 }else{
                     newStatus = 0
                 }
-                console.log(newStatus)
                 Order.findByIdAndUpdate(id,{paymentStatus:newStatus},(err,data)=>{
                    if(err){
                        console.log(err);
@@ -161,7 +160,11 @@ module.exports = function (app, passport) {
                 let newStatus;
                 if (status == 0){
                     newStatus = 1
-                }else{
+                }
+                if (status == 1){
+                    newStatus = 2
+                }
+                if (status == 2){
                     newStatus = 0
                 }
                 console.log(newStatus)
@@ -178,6 +181,26 @@ module.exports = function (app, passport) {
             res.redirect('/');
         }
 
+    });
+
+    app.get('/theodoidonhang',isLogin,async (req,res)=>{
+        if (req.user.userRole === 'daily') {
+            try {
+                let order = await Order.find({User:req.user._id}).populate('User').populate('orderList.Product');
+                res.render('index', {
+                    page: 'orderTrack',
+                    title: 'Theo dõi đơn hàng',
+                    user: req.user,
+                    order: order
+                });
+            } catch (e) {
+                console.log(e);
+                res.redirect('/')
+            }
+
+        } else {
+            res.redirect('/');
+        }
     });
 };
 

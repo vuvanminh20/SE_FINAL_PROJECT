@@ -3,7 +3,12 @@ let table = $('#tableOrderManage').DataTable();
 $(document).ready(function () {
     loadTableOrder(order);
 
+    $('.close-detail').click(() => {
+        $('.order-detail').css('display', 'none');
+    });
+
     $(document).on('click', '.btn-action', (event) => {
+        event.preventDefault();
         let id = $(event.target).attr('action');
         let idArr = id.split('_');
         let action = idArr[0];
@@ -90,7 +95,7 @@ $(document).ready(function () {
                         let {data} = response;
                         if (data.code === 200) {
                             let status;
-                            if (target2 == 0) {
+                            if (parseInt(target2) === 0) {
                                 switch (target3) {
                                     case 'momo':
                                         status = '<span class="btn-action" action="payment_' + targetId + '_' + 1 + '_momo" style="color:green">MOMO</span>';
@@ -122,9 +127,13 @@ $(document).ready(function () {
                         let {data} = response;
                         if (data.code === 200) {
                             let status;
-                            if (target2 == 0) {
-                                status = '<span class="btn-action" action="delivery_' + targetId + '_' + 1 + '" style="color:green">Đã giao</span>';
-                            } else {
+                            if (parseInt(target2) === 0) {
+                                status = '<span class="btn-action" action="delivery_' + targetId + '_' + 1 + '" style="color:firebrick">Đang giao</span>';
+                            }
+                            if (parseInt(target2) === 1) {
+                                status = '<span class="btn-action" action="delivery_' + targetId + '_' + 2 + '" style="color:green">Đã giao</span>';
+                            }
+                            if (parseInt(target2) === 2) {
                                 status = '<span class="btn-action" action="delivery_' + targetId + '_' + 0 + '" style="color:red">Chưa giao</span>';
                             }
                             $(event.target).replaceWith(status);
@@ -134,6 +143,31 @@ $(document).ready(function () {
                         }
                     });
                 break;
+            case 'detail':
+                let detailOrder = order.find(x => x._id === targetId);
+
+                $('.order-detail-table').empty();
+                $('.order-detail-table').append(`        
+                    <tr>
+                        <th>TT</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                    </tr>
+                `);
+
+                for (let i = 0; i < detailOrder.orderList.length; i++) {
+                    $('.order-detail-table').append(`
+                        <tr>
+                            <td>` + (i + 1) + `</td>
+                            <td>` + detailOrder.orderList[i].Product.Name + `</td>
+                            <td>` + detailOrder.orderList[i].Qty + `</td>
+                            <td>` + priceFormat(detailOrder.orderList[i].Product.sellPrice) + ` vnđ</td>
+                        </tr>
+                    `);
+                }
+
+                $('.order-detail').css('display', 'block');
         }
     });
 });
@@ -193,14 +227,16 @@ function loadTableOrder(data) {
                         case 0:
                             return '<span class="btn-action" action="delivery_' + data._id + '_' + 0 + '" style="color:red">Chưa giao</span>';
                         case 1:
-                            return '<span class="btn-action" action="delivery_' + data._id + '_' + 1 + '" style="color:green">Đã giao</span>';
+                            return '<span class="btn-action" action="delivery_' + data._id + '_' + 1 + '" style="color:firebrick">Đang giao</span>';
+                        case 2:
+                            return '<span class="btn-action" action="delivery_' + data._id + '_' + 2 + '" style="color:green">Đã giao</span>';
                     }
                 }
             },
             {
                 data: null,
                 render: function (data) {
-                    return '<i class="fas fa-print btn-action" action="print_' + data._id + '"></i>'
+                    return '<i class="fas fa-print btn-action" action="print_' + data._id + '"></i> / <i class="fas fa-info btn-action" action="detail_' + data._id + '"></i>'
                 }
             }
         ],
