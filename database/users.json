@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "61c592ff3e5c9a9c58442714"
+  },
+  "Email": "ketoan@gmail.com",
+  "Name": "Kế toán test",
+  "Password": "$2a$08$kuTwQ2IdDduVEDS9oRuInOBY2NrulSGxN2lpI.FUjxEyRF5H8YQYC",
+  "userRole": "ketoan"
+},{
+  "_id": {
+    "$oid": "61c80dc93e5c9a9c58442727"
+  },
+  "Email": "daily@gmail.com",
+  "Name": "Đại lý test",
+  "Password": "$2a$08$kuTwQ2IdDduVEDS9oRuInOBY2NrulSGxN2lpI.FUjxEyRF5H8YQYC",
+  "userRole": "daily"
+}]

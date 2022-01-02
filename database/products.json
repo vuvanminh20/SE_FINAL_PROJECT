@@ -1,0 +1,71 @@
+[{
+  "_id": {
+    "$oid": "61c5e7c33e5c9a9c58442717"
+  },
+  "Name": "Whey protein 1",
+  "sellPrice": "1500000",
+  "Qty": 10
+},{
+  "_id": {
+    "$oid": "61c5e7f13e5c9a9c58442718"
+  },
+  "Name": "Whey protein 2",
+  "sellPrice": "1600000",
+  "Qty": 15
+},{
+  "_id": {
+    "$oid": "61c5e7f43e5c9a9c58442719"
+  },
+  "Name": "Whey protein 3",
+  "sellPrice": "1700000",
+  "Qty": 18
+},{
+  "_id": {
+    "$oid": "61c5e7f73e5c9a9c5844271a"
+  },
+  "Name": "Whey protein 4",
+  "sellPrice": "1800000",
+  "Qty": 17
+},{
+  "_id": {
+    "$oid": "61c5e7f93e5c9a9c5844271b"
+  },
+  "Name": "Whey protein 5",
+  "sellPrice": "1900000",
+  "Qty": 20
+},{
+  "_id": {
+    "$oid": "61c5e7fb3e5c9a9c5844271c"
+  },
+  "Name": "Whey protein 6",
+  "sellPrice": "2000000",
+  "Qty": 19
+},{
+  "_id": {
+    "$oid": "61c5e7fe3e5c9a9c5844271d"
+  },
+  "Name": "Whey protein 7",
+  "sellPrice": "2100000",
+  "Qty": 19
+},{
+  "_id": {
+    "$oid": "61c5e8003e5c9a9c5844271e"
+  },
+  "Name": "Whey protein 8",
+  "sellPrice": "2200000",
+  "Qty": 14
+},{
+  "_id": {
+    "$oid": "61c5e8033e5c9a9c5844271f"
+  },
+  "Name": "Whey protein 9",
+  "sellPrice": "2100000",
+  "Qty": 8
+},{
+  "_id": {
+    "$oid": "61c5e8063e5c9a9c58442720"
+  },
+  "Name": "Whey protein 10",
+  "sellPrice": "2400000",
+  "Qty": 12
+}]

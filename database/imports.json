@@ -1,0 +1,112 @@
+[{
+  "_id": {
+    "$oid": "61cd0d23ce75343ad5ae464f"
+  },
+  "Date": "1640828195124",
+  "importList": [
+    {
+      "Product": {
+        "$oid": "61c5e7c33e5c9a9c58442717"
+      },
+      "importPrice": 200000,
+      "importQty": 20,
+      "_id": {
+        "$oid": "61cd0d23ce75343ad5ae4650"
+      }
+    },
+    {
+      "Product": {
+        "$oid": "61c5e7f13e5c9a9c58442718"
+      },
+      "importPrice": 200000,
+      "importQty": 20,
+      "_id": {
+        "$oid": "61cd0d23ce75343ad5ae4651"
+      }
+    },
+    {
+      "Product": {
+        "$oid": "61c5e7f43e5c9a9c58442719"
+      },
+      "importPrice": 200000,
+      "importQty": 20,
+      "_id": {
+        "$oid": "61cd0d23ce75343ad5ae4652"
+      }
+    },
+    {
+      "Product": {
+        "$oid": "61c5e7f73e5c9a9c5844271a"
+      },
+      "importPrice": 200000,
+      "importQty": 20,
+      "_id": {
+        "$oid": "61cd0d23ce75343ad5ae4653"
+      }
+    },
+    {
+      "Product": {
+        "$oid": "61c5e7f93e5c9a9c5844271b"
+      },
+      "importPrice": 200000,
+      "importQty": 20,
+      "_id": {
+        "$oid": "61cd0d23ce75343ad5ae4654"
+      }
+    },
+    {
+      "Product": {
+        "$oid": "61c5e7fb3e5c9a9c5844271c"
+      },
+      "importPrice": 200000,
+      "importQty": 20,
+      "_id": {
+        "$oid": "61cd0d23ce75343ad5ae4655"
+      }
+    },
+    {
+      "Product": {
+        "$oid": "61c5e7fe3e5c9a9c5844271d"
+      },
+      "importPrice": 200000,
+      "importQty": 20,
+      "_id": {
+        "$oid": "61cd0d23ce75343ad5ae4656"
+      }
+    },
+    {
+      "Product": {
+        "$oid": "61c5e8003e5c9a9c5844271e"
+      },
+      "importPrice": 200000,
+      "importQty": 20,
+      "_id": {
+        "$oid": "61cd0d23ce75343ad5ae4657"
+      }
+    },
+    {
+      "Product": {
+        "$oid": "61c5e8033e5c9a9c5844271f"
+      },
+      "importPrice": 200000,
+      "importQty": 20,
+      "_id": {
+        "$oid": "61cd0d23ce75343ad5ae4658"
+      }
+    },
+    {
+      "Product": {
+        "$oid": "61c5e8063e5c9a9c58442720"
+      },
+      "importPrice": 200000,
+      "importQty": 20,
+      "_id": {
+        "$oid": "61cd0d23ce75343ad5ae4659"
+      }
+    }
+  ],
+  "User": {
+    "$oid": "61c592ff3e5c9a9c58442714"
+  },
+  "__v": 0
+}]

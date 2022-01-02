@@ -1,0 +1,99 @@
+[{
+  "_id": {
+    "$oid": "61cd0be6e3fc21d6c5acabfc"
+  },
+  "User": {
+    "$oid": "61c80dc93e5c9a9c58442727"
+  },
+  "Date": "1640827878271",
+  "Address": "Trường đại học tôn đức thắng",
+  "Phone": "9999999999",
+  "orderList": [
+    {
+      "Product": {
+        "$oid": "61c5e7c33e5c9a9c58442717"
+      },
+      "Qty": 10,
+      "_id": {
+        "$oid": "61cd0be6e3fc21d6c5acabfd"
+      }
+    },
+    {
+      "Product": {
+        "$oid": "61c5e7f13e5c9a9c58442718"
+      },
+      "Qty": 5,
+      "_id": {
+        "$oid": "61cd0be6e3fc21d6c5acabfe"
+      }
+    },
+    {
+      "Product": {
+        "$oid": "61c5e7f43e5c9a9c58442719"
+      },
+      "Qty": 2,
+      "_id": {
+        "$oid": "61cd0be6e3fc21d6c5acabff"
+      }
+    },
+    {
+      "Product": {
+        "$oid": "61c5e7f73e5c9a9c5844271a"
+      },
+      "Qty": 3,
+      "_id": {
+        "$oid": "61cd0be6e3fc21d6c5acac00"
+      }
+    },
+    {
+      "Product": {
+        "$oid": "61c5e7fb3e5c9a9c5844271c"
+      },
+      "Qty": 1,
+      "_id": {
+        "$oid": "61cd0be6e3fc21d6c5acac01"
+      }
+    },
+    {
+      "Product": {
+        "$oid": "61c5e7fe3e5c9a9c5844271d"
+      },
+      "Qty": 1,
+      "_id": {
+        "$oid": "61cd0be6e3fc21d6c5acac02"
+      }
+    },
+    {
+      "Product": {
+        "$oid": "61c5e8003e5c9a9c5844271e"
+      },
+      "Qty": 6,
+      "_id": {
+        "$oid": "61cd0be6e3fc21d6c5acac03"
+      }
+    },
+    {
+      "Product": {
+        "$oid": "61c5e8033e5c9a9c5844271f"
+      },
+      "Qty": 12,
+      "_id": {
+        "$oid": "61cd0be6e3fc21d6c5acac04"
+      }
+    },
+    {
+      "Product": {
+        "$oid": "61c5e8063e5c9a9c58442720"
+      },
+      "Qty": 8,
+      "_id": {
+        "$oid": "61cd0be6e3fc21d6c5acac05"
+      }
+    }
+  ],
+  "totalPayment": 93500000,
+  "paymentType": "momo",
+  "paymentStatus": 0,
+  "deliveryStatus": 0,
+  "__v": 0
+}]
