@@ -233,6 +233,30 @@ module.exports = function (app, passport) {
             res.redirect('/');
         }
     });
+
+    app.get('/thongkedoanhthu',isLogin,async (req,res)=>{
+        if (req.user.userRole === 'ketoan') {
+            try {
+                let order = await Order.find().populate('orderList.Product');
+                let product = await Product.find();
+                let importP =  await Import.find().populate('importList.Product');
+                res.render('index', {
+                    page: 'profitStatis',
+                    title: 'Thống kê doanh thu',
+                    user: req.user,
+                    order: order,
+                    product: product,
+                    importP:importP
+                });
+            } catch (e) {
+                console.log(e);
+                res.redirect('/')
+            }
+
+        } else {
+            res.redirect('/');
+        }
+    });
 };
 
 function isLogin(req, res, next) {
