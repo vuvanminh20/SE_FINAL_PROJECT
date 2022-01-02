@@ -1,0 +1,30 @@
+<div class="month-statis-container container">
+    <h2>Thống kê hàng hoá</h2>
+    <label for="monthPicker">Chọn tháng cần thống kê: </label>
+    <input id="monthPicker" type="month" name="product-month">
+    <div class="table-container">
+        <div style=" width: 100%; padding: 1%">
+            <table id="tableProductStatic" class="display" >
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Số lượng nhập</th>
+                    <th>Số lượng xuất</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <h4 class="statis-empty">Không tìm thấy dữ liệu !</h4>
+</div>
+
+<script>
+    let order =<%-JSON.stringify(order)%>;
+    let importP =<%-JSON.stringify(importP)%>;
+    let product =<%-JSON.stringify(product)%>;
+</script>
+<script src="../javascripts/productStatis.js"></script>

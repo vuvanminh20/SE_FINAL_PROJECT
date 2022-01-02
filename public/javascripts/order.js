@@ -25,9 +25,15 @@ $(document).ready(function () {
     $('#btnUpdate').click(()=>{
         totalPrice = 0
         for (let i = 0; i < lengthProduct; i++) {
-            totalPrice = totalPrice + ($('#txtQty' + i).val() * product[i].sellPrice);
+            if($('#txtQty' + i).val() <= product[i].Qty){
+                totalPrice = totalPrice + ($('#txtQty' + i).val() * product[i].sellPrice);
+            }else{
+                alert('Sản phẩm '+product[i].Name+' chỉ còn tối đa '+product[i].Qty+' sản phẩm !');
+                $('#txtQty' + i).val(product[i].Qty);
+                $('#btnUpdate').trigger('click');
+            }
         }
-        $('#txtTotalPrice').html(priceFormat(totalPrice) + 'vnđ')
+        $('#txtTotalPrice').html(priceFormat(totalPrice) + ' vnđ')
     });
 
     $('#btnOrder').click(()=>{

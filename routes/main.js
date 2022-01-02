@@ -63,6 +63,10 @@ module.exports = function (app, passport) {
                 User: req.user._id
             });
             let saveImport = await newImport.save();
+
+            for (let p of productList) {
+               await Product.findByIdAndUpdate(p.Product,{$inc:{Qty:parseInt(p.importQty)}});
+            }
             res.json({code: 200});
         } else {
             res.redirect('/');
@@ -72,7 +76,7 @@ module.exports = function (app, passport) {
     app.get('/donhang', isLogin, async (req, res) => {
         if (req.user.userRole === 'daily') {
             try {
-                let product = await Product.find()
+                let product = await Product.find({Qty:{$gt:0}});
                 res.render('index', {
                     page: 'order',
                     title: 'Tạo đơn hàng',
@@ -83,7 +87,6 @@ module.exports = function (app, passport) {
                 console.log(e);
                 res.redirect('/')
             }
-
         } else {
             res.redirect('/');
         }
@@ -109,6 +112,10 @@ module.exports = function (app, passport) {
                 deliveryStatus: 0,
             });
             let saveOrder = await newOrder.save();
+
+            for (let p of orderList) {
+                await Product.findByIdAndUpdate(p.Product,{$inc:{Qty:- parseInt(p.Qty)}});
+            }
             res.json({code: 200});
         } else {
             res.redirect('/');
@@ -192,6 +199,30 @@ module.exports = function (app, passport) {
                     title: 'Theo dõi đơn hàng',
                     user: req.user,
                     order: order
+                });
+            } catch (e) {
+                console.log(e);
+                res.redirect('/')
+            }
+
+        } else {
+            res.redirect('/');
+        }
+    });
+
+    app.get('/thongkehanghoa',isLogin,async (req,res)=>{
+        if (req.user.userRole === 'ketoan') {
+            try {
+                let order = await Order.find().populate('orderList.Product');
+                let product = await Product.find();
+                let importP =  await Import.find().populate('importList.Product');
+                res.render('index', {
+                    page: 'productStatis',
+                    title: 'Thống kê hàng hoá',
+                    user: req.user,
+                    order: order,
+                    product: product,
+                    importP:importP
                 });
             } catch (e) {
                 console.log(e);

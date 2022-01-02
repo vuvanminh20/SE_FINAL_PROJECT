@@ -437,3 +437,54 @@ textarea {
     }
   }
 }
+
+.month-statis-container {
+  margin: 30px auto;
+  padding: 30px;
+  background: white;
+
+  h2 {
+    text-align: center;
+  }
+  h4{
+    text-align: center;
+    display: none;
+  }
+  .table-container {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 50px;
+    display: none;
+
+    table {
+      thead {
+        tr {
+          th {
+            text-align: center;
+          }
+        }
+      }
+
+      tbody {
+        td {
+          text-align: center;
+
+          img {
+            height: 70px;
+            width: 70px;
+          }
+
+          button {
+            background: transparent;
+            border: none;
+          }
+
+          .btn-action {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+}

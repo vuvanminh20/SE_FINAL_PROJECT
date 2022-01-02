@@ -356,4 +356,40 @@ textarea {
   border: 1px solid black;
 }
 
+.month-statis-container {
+  margin: 30px auto;
+  padding: 30px;
+  background: white;
+}
+.month-statis-container h2 {
+  text-align: center;
+}
+.month-statis-container h4 {
+  text-align: center;
+  display: none;
+}
+.month-statis-container .table-container {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 50px;
+  display: none;
+}
+.month-statis-container .table-container table thead tr th {
+  text-align: center;
+}
+.month-statis-container .table-container table tbody td {
+  text-align: center;
+}
+.month-statis-container .table-container table tbody td img {
+  height: 70px;
+  width: 70px;
+}
+.month-statis-container .table-container table tbody td button {
+  background: transparent;
+  border: none;
+}
+.month-statis-container .table-container table tbody td .btn-action {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=main.css.map */

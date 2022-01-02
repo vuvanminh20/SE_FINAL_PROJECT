@@ -1,7 +1,7 @@
 let table = $('#tableOrderTrack').DataTable();
 
 $(document).ready(function () {
-    loadTableOrder(order);
+    loadTable(order);
 
     $('.close-detail').click(() => {
         $('.order-detail').css('display', 'none');
@@ -41,7 +41,7 @@ $(document).ready(function () {
     });
 });
 
-function loadTableOrder(data) {
+function loadTable(data) {
     table.destroy();
     table = $('#tableOrderTrack').DataTable({
         data: data,
@@ -60,8 +60,9 @@ function loadTableOrder(data) {
             },
             {
                 data: 'totalPayment',
+                width: '15%',
                 render: function (data) {
-                    return priceFormat(data) + 'vnđ';
+                    return priceFormat(data) + ' vnđ';
                 }
             },
             {
