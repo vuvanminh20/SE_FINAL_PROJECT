@@ -15,9 +15,12 @@ $(document).ready(() => {
             for (let i = 0; i < importP.length; i++) {
                 let tmp = importP[i];
                 let tmpDate = (new Date(parseInt(tmp.Date)).toLocaleDateString()).split('/');
-                if (tmpDate[0] === month && tmpDate[2] === year) {
+
+                if (tmpDate[1] === month && tmpDate[2] === year) {
+                    console.log('ok')
                     for (let j = 0; j < tmp.importList.length; j++) {
                         let tmp1 = tmp.importList[j]
+                        console.log(tmp1)
                         let index = productStatis.findIndex((obj => obj.id == tmp1.Product._id));
                         productStatis[index].in = parseInt(productStatis[index].in) + parseInt(tmp1.importQty);
                     }
@@ -27,15 +30,15 @@ $(document).ready(() => {
             for (let i = 0; i < order.length; i++) {
                 let tmp = order[i];
                 let tmpDate = (new Date(parseInt(tmp.Date)).toLocaleDateString()).split('/');
-                if (tmpDate[0] === month && tmpDate[2] === year) {
+                if (tmpDate[1] === month && tmpDate[2] === year) {
                     for (let j = 0; j < tmp.orderList.length; j++) {
                         let tmp1 = tmp.orderList[j]
                         let index = productStatis.findIndex((obj => obj.id == tmp1.Product._id));
+                        console.log(tmp1.Qty)
                         productStatis[index].out = parseInt(productStatis[index].out) + parseInt(tmp1.Qty);
                     }
                 }
             }
-
             loadTable(productStatis);
             $('.statis-empty').css('display', 'none');
             $('.table-container').css('display', 'block');

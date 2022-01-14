@@ -24,10 +24,13 @@ $(document).ready(function () {
                 switch (printOrder.paymentType) {
                     case 'momo':
                         payment = ' Ví điện tử Momo';
+                        break;
                     case 'cod':
                         payment = 'Thanh toán khi nhận hàng';
+                        break;
                     case 'bank':
                         payment = 'Chuyển khoản';
+                        break;
                 }
                 if (printOrder.paymentStatus === 1) {
                     pStatus = 'Đã thanh toán';
@@ -99,19 +102,25 @@ $(document).ready(function () {
                                 switch (target3) {
                                     case 'momo':
                                         status = '<span class="btn-action" action="payment_' + targetId + '_' + 1 + '_momo" style="color:green">MOMO</span>';
+                                        break;
                                     case 'bank':
                                         status = '<span class="btn-action" action="payment_' + targetId + '_' + 1 + '_bank" style="color:green">BANK</span>';
+                                        break;
                                     case 'cod':
                                         status = '<span class="btn-action" action="payment_' + targetId + '_' + 1 + '_cod" style="color:green">COD</span>';
+                                        break;
                                 }
                             } else {
                                 switch (target3) {
                                     case 'momo':
                                         status = '<span class="btn-action" action="payment_' + targetId + '_' + 0 + '_momo" style="color:red">MOMO</span>';
+                                        break;
                                     case 'bank':
                                         status = '<span class="btn-action" action="payment_' + targetId + '_' + 0 + '_bank" style="color:red">BANK</span>';
+                                        break;
                                     case 'cod':
                                         status = '<span class="btn-action" action="payment_' + targetId + '_' + 0 + '_cod" style="color:red">COD</span>';
+                                        break;
                                 }
                             }
                             $(event.target).replaceWith(status);
