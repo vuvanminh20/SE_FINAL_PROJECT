@@ -27,7 +27,7 @@ $(document).ready(() => {
             for (let i = 0; i < order.length; i++) {
                 let tmp = order[i];
                 let tmpDate = (new Date(parseInt(tmp.Date)).toLocaleDateString()).split('/');
-                if (tmpDate[1] === month && tmpDate[2] === year) {
+                if (tmpDate[1] == parseInt(month) && tmpDate[2] == year) {
                     for (let j = 0; j < tmp.orderList.length; j++) {
                         let tmp1 = tmp.orderList[j]
                         let index = productStatis.findIndex((obj => obj.id == tmp1.Product._id));
